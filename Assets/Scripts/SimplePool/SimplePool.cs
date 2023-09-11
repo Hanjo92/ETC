@@ -74,6 +74,19 @@ public class SimplePool
 		obj.gameObject.SetActive(false);
 	}
 
+	public static void ReleaseOrDestroy<T>(T obj, bool destroy = false) where T : MonoBehaviour, IPoolObj
+	{
+		var key = obj.TemplateKey;
+		if(destroy || poolDictionary.TryGetValue(key, out var pool) == false)
+		{
+			GameObject.Destroy(obj.gameObject);
+			return;
+		}
+
+		pool.Enqueue(obj);
+		obj.gameObject.SetActive(false);
+	}
+
 	public static void Clear(string key)
 	{
 		if( poolDictionary.TryGetValue(key, out var pool))
