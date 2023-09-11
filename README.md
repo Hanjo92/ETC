@@ -21,6 +21,14 @@ Project : Unity 2021.3.18f1
 
 ![image](https://github.com/Hanjo92/ETC/assets/26320361/a805752d-6864-48a0-80e3-8687c65389b6)
 
+# Smoke
+[연막탄](https://seunghus.tistory.com/100)
+
+- 지형과 어느정도 반응하며 퍼지는 연막탄
+
+![화면 캡처 2023-09-11 231914](https://github.com/Hanjo92/ETC/assets/26320361/341e6bbe-edb0-48d6-a30b-041770ee0a6e)
 
 # Simple Pool
-간단하게 만들어진 Unity Mono상속 오브젝트 풀 기능
+[Unity Mono상속 오브젝트 풀 기능](https://seunghus.tistory.com/99)
+
+- 간단하게 구현 된 Unity Mono상속 오브젝트를 풀링하기 위한 스크립트
