@@ -145,7 +145,7 @@ public class SmokeGrenade : UpdateObject
 			case EruptionShape.Sphere:
 			{
 				var angleIndex2 = index / directionCount;
-				return transform.rotation * Quaternion.Euler(0, angleSlice * angleIndex, 0) * Quaternion.Euler( -angleSlice * angleIndex2, 0, 0) * Vector3.forward;
+				return transform.rotation * Quaternion.Euler(-angleSlice * angleIndex2, angleSlice * angleIndex, 0) * Vector3.forward;
 			}
 		}
 		return Vector3.forward;
