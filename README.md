@@ -34,3 +34,7 @@ Project : Unity 2021.3.18f1
 - 인게임 UI안에서 포토샵 색상 선택과 비슷한 기능을 하게 해주는 UI
 
 ![image](https://github.com/Hanjo92/ETC/assets/26320361/a805752d-6864-48a0-80e3-8687c65389b6)
+
+
+# Simple Pool
+간단하게 만들어진 Unity Mono상속 오브젝트 풀 기능
