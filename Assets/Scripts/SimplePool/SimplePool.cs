@@ -64,16 +64,14 @@ public class SimplePool
 			return;
 		}
 
-		if(poolDictionary.TryGetValue(key, out var pool))
+		if(poolDictionary.TryGetValue(key, out var pool) == false)
 		{
-			pool.Enqueue(obj);
-			obj.gameObject.SetActive(false);
+			Debug.LogWarning($"It is not pooled object :: {key}\nCreate Pool :: Key :{key}");
+			pool = new Queue<MonoBehaviour>();
+			poolDictionary.Add(key, pool);
 		}
-		else
-		{
-			Debug.LogWarning($"Is not pooled object :: {key}");
-			GameObject.Destroy(obj.gameObject);
-		}
+		pool.Enqueue(obj);
+		obj.gameObject.SetActive(false);
 	}
 
 	public static void Clear(string key)
