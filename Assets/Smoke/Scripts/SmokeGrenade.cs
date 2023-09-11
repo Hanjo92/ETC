@@ -150,9 +150,9 @@ public class SmokeGrenade : UpdateObject
 		}
 		return Vector3.forward;
 	}
-	private float CalculateFragmentsPower(int index)
+	private float CalculateFragmentsPower(int eruptedCount)
 	{
-		var ratio = index / (float)eruptionCount;
+		var ratio = eruptedCount / (float)eruptionCount;
 		var powerCurve = (eruptionPowerCurve.length > 0) ? eruptionPowerCurve.Evaluate(ratio) : Mathf.Cos(Mathf.PI * 0.5f * ratio);
 		return powerCurve * EruptionPower;
 	}

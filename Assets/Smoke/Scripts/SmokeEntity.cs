@@ -71,13 +71,13 @@ public class SmokeEntity : MonoBehaviour, IPoolObj
 
 	public void SmokeUpdate(float deltaTime)
 	{
-		fTime += deltaTime;
 		if(fTime > ApearTime)
 		{
 			Release();
 			return;
 		}
 		var moveDistance = CalculateDistance(fTime, deltaTime);
+		fTime += deltaTime;
 		if(moveDistance <= 0)
 			return;
 		while(moveDistance > 0)
@@ -98,8 +98,7 @@ public class SmokeEntity : MonoBehaviour, IPoolObj
 	private float CalculateDistance(float fTime, float deltaTime)
 	{
 		var startSpeed = eruptionSpeed + AirResistance * fTime;
-
-		return ((startSpeed + 0.5f * AirResistance * deltaTime) * deltaTime);
+		return (startSpeed + 0.5f * AirResistance * deltaTime) * deltaTime;
 	}
 
 	public void Init()
