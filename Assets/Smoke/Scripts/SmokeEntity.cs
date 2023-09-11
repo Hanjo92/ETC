@@ -82,9 +82,9 @@ public class SmokeEntity : MonoBehaviour, IPoolObj
 			return;
 		while(moveDistance > 0)
 		{
-			while(Physics.Raycast(Position + moveDirection * Size * 0.5f, moveDirection, out var info, moveDistance, MapLayer))
+			while(Physics.Raycast(Position, moveDirection, out var info, moveDistance, MapLayer))
 			{
-				Position += moveDirection * info.distance;
+				Position = info.point;
 				moveDistance -= info.distance;
 				var Reflect = Vector3.Reflect(moveDirection, info.normal);
 				var lerpCenter = Vector3.Lerp(moveDirection, Reflect, 0.5f);
