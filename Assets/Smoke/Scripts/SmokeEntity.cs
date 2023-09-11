@@ -85,9 +85,9 @@ public class SmokeEntity : MonoBehaviour, IPoolObj
 		{
 			Position = info.point;
 			moveDistance -= info.distance;
-			var Reflect = Vector3.Reflect(moveDirection, info.normal);
-			var lerpCenter = Vector3.Lerp(moveDirection, Reflect, 0.5f);
-			moveDirection = Vector3.Lerp(Reflect, lerpCenter, SmokeDefines.ReflectDirection);
+			var reflect = Vector3.Reflect(moveDirection, info.normal);
+			var lerpCenter = Vector3.Lerp(moveDirection, reflect, 0.5f);
+			moveDirection = Vector3.Lerp(reflect, lerpCenter, SmokeDefines.ReflectDirection);
 		}
 		Position += moveDirection * moveDistance;
 	}

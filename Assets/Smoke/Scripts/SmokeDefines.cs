@@ -8,7 +8,7 @@ using UnityEngine;
 public static class SmokeDefines
 {
 	public static int MapLayer = 1 << LayerMask.NameToLayer("Map");
-	public static float ReflectDirection = 0.7f;
+	public static float ReflectDirection = 0.9f;
 
 	public static Vector3[] SquareDimention =
 	{
