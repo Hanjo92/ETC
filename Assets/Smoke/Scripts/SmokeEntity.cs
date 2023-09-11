@@ -80,19 +80,16 @@ public class SmokeEntity : MonoBehaviour, IPoolObj
 		fTime += deltaTime;
 		if(moveDistance <= 0)
 			return;
-		while(moveDistance > 0)
+
+		while(Physics.Raycast(Position, moveDirection, out var info, moveDistance, MapLayer))
 		{
-			while(Physics.Raycast(Position, moveDirection, out var info, moveDistance, MapLayer))
-			{
-				Position = info.point;
-				moveDistance -= info.distance;
-				var Reflect = Vector3.Reflect(moveDirection, info.normal);
-				var lerpCenter = Vector3.Lerp(moveDirection, Reflect, 0.5f);
-				moveDirection = Vector3.Lerp(Reflect, lerpCenter, SmokeDefines.ReflectDirection);
-			}
-			Position += moveDirection * moveDistance;
-			moveDistance -= moveDistance;
+			Position = info.point;
+			moveDistance -= info.distance;
+			var Reflect = Vector3.Reflect(moveDirection, info.normal);
+			var lerpCenter = Vector3.Lerp(moveDirection, Reflect, 0.5f);
+			moveDirection = Vector3.Lerp(Reflect, lerpCenter, SmokeDefines.ReflectDirection);
 		}
+		Position += moveDirection * moveDistance;
 	}
 
 	private float CalculateDistance(float fTime, float deltaTime)
