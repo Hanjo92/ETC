@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
-
+using SimpleFramework;
 public class SmokeGrenade : UpdateObject
 {
 	public enum EruptionShape
