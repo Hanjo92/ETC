@@ -16,7 +16,7 @@ public class SimplePool
 
     public static T Instantiate<T>(T template) where T : MonoBehaviour, IPoolObj
 	{
-		var key = template.gameObject.name.ToString();
+		var key = template.TemplateKey;
 		var pooledObj = GetPooledObject<T>(key);
 		if(pooledObj != null) return pooledObj;
 
