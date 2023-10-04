@@ -98,7 +98,7 @@ public class SmokeEntity : MonoBehaviour, IPoolObj
 		return (startSpeed + 0.5f * AirResistance * deltaTime) * deltaTime;
 	}
 
-	public void Init()
+	public void Init(object[] param = null)
 	{
 		fTime = 0;
 	}

@@ -6,7 +6,7 @@ using UnityEngine;
 public interface IPoolObj
 {
 	string TemplateKey {  get; }
-	void Init();
+	void Init(object[] param = null);
     void Release();
 }
 
@@ -14,19 +14,19 @@ public class SimplePool
 {
     public static Dictionary<string, Queue<MonoBehaviour>> poolDictionary = new Dictionary<string, Queue<MonoBehaviour>>();
 
-    public static T Instantiate<T>(T template) where T : MonoBehaviour, IPoolObj
+    public static T Instantiate<T>(T template, object[] param = null) where T : MonoBehaviour, IPoolObj
 	{
 		var key = template.TemplateKey;
-		var pooledObj = GetPooledObject<T>(key);
+		var pooledObj = GetPooledObject<T>(key, param);
 		if(pooledObj != null) return pooledObj;
 
 		return GameObject.Instantiate(template);
 	}
 
-	public static T InstantiatePrimitive<T>(PrimitiveType primitiveType, string key) where T : MonoBehaviour, IPoolObj
+	public static T InstantiatePrimitive<T>(PrimitiveType primitiveType, string key, object[] param = null) where T : MonoBehaviour, IPoolObj
 	{
 		var primitiveName = primitiveType.ToString() + key;
-		var pooledObj = GetPooledObject<T>(primitiveName);
+		var pooledObj = GetPooledObject<T>(primitiveName, param);
 		if(pooledObj != null)
 			return pooledObj;
 
@@ -35,7 +35,7 @@ public class SimplePool
 		return gameObject.AddComponent<T>();
 	}
 
-	private static T GetPooledObject<T>(string key) where T : MonoBehaviour, IPoolObj
+	private static T GetPooledObject<T>(string key, object[] param) where T : MonoBehaviour, IPoolObj
 	{
 		var hasPool = poolDictionary.TryGetValue(key, out var pool);
 		if(hasPool)
@@ -44,7 +44,7 @@ public class SimplePool
 			{
 				var obj = (T)pool.Dequeue();
 				obj.gameObject.SetActive(true);
-				obj.Init();
+				obj.Init(param);
 				return obj;
 			}
 		}
