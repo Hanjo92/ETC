@@ -17,10 +17,18 @@ public class SimplePool
     public static T Instantiate<T>(T template, object[] param = null) where T : MonoBehaviour, IPoolObj
 	{
 		var key = template.TemplateKey;
+		if(string.IsNullOrEmpty(key))
+		{
+			key = template.gameObject.name.ToString();
+		}
 		var pooledObj = GetPooledObject<T>(key, param);
-		if(pooledObj != null) return pooledObj;
+		if(pooledObj == null)
+		{
+			pooledObj = Object.Instantiate(template);
+			pooledObj.Init(param);
+		}
 
-		return GameObject.Instantiate(template);
+		return pooledObj;
 	}
 
 	public static T InstantiatePrimitive<T>(PrimitiveType primitiveType, string key, object[] param = null) where T : MonoBehaviour, IPoolObj
@@ -32,7 +40,9 @@ public class SimplePool
 
 		var gameObject = GameObject.CreatePrimitive(primitiveType);
 		gameObject.name = primitiveName;
-		return gameObject.AddComponent<T>();
+		var t = gameObject.AddComponent<T>();
+		t.Init(param);
+		return t;
 	}
 
 	private static T GetPooledObject<T>(string key, object[] param) where T : MonoBehaviour, IPoolObj
