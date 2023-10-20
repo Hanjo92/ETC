@@ -53,3 +53,29 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
 		return typeof(T).ToString() + "_Singleton";
 	}
 }
+
+public class ScriptableSingleton<T> : ScriptableObject where T : ScriptableSingleton<T>
+{
+	private static T _instance;
+	public static T Instance
+	{
+		get
+		{
+			if(_instance == null)
+			{
+				T[] assets = Resources.LoadAll<T>("");
+				if(assets == null || assets.Length < 1)
+				{
+					throw new System.Exception();
+				}
+				else if(assets.Length > 1)
+				{
+					Debug.LogWarning("");
+				}
+				_instance = assets[0];
+			}
+
+			return _instance;
+		}
+	}
+}
