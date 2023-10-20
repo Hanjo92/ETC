@@ -1,0 +1,11 @@
+{
+  "name": "com.almond.simple-pool",
+  "version": "1.0.0",
+  "displayName": "Almond simple-pool",
+  "description": "This is simple object pool",
+  "unity": "2019.1",
+  "author": {
+    "name": "Almond",
+    "email": "gooldare@naver.com"
+  }
+}
