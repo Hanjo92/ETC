@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117986824ccd8e84286f85cb0f93eea3, type: 3}
+  m_Name: ThemaColorData
+  m_EditorClassIdentifier: 
+  themaColors:
+  - thema: 0
+    main1: {r: 0.5372549, g: 0.12941177, b: 0.7607843, a: 1}
+    main2: {r: 0.99607843, g: 0.22352941, b: 0.6431373, a: 1}
+    main3: {r: 1, g: 0.99215686, b: 0.73333335, a: 1}
+    main4: {r: 0.3254902, g: 0.972549, b: 0.83137256, a: 1}
+    main5: {r: 0.14509805, g: 0.76862746, b: 0.972549, a: 1}
+    dark: {r: 0, g: 0, b: 0, a: 0}
+    light: {r: 0, g: 0, b: 0, a: 0}
+    selectedUI: {r: 0, g: 0, b: 0, a: 0}
+    disabledUI: {r: 0, g: 0, b: 0, a: 0}
+  - thema: 1
+    main1: {r: 0.9882353, g: 0.12156863, b: 0.9764706, a: 1}
+    main2: {r: 0.7372549, g: 0.05490196, b: 0.9372549, a: 1}
+    main3: {r: 0.26666668, g: 0.1882353, b: 0.38039216, a: 1}
+    main4: {r: 0.89411765, g: 0.14509805, b: 0.21176471, a: 1}
+    main5: {r: 0.9882353, g: 0.36862746, b: 0.19215687, a: 1}
+    dark: {r: 0, g: 0, b: 0, a: 0}
+    light: {r: 0, g: 0, b: 0, a: 0}
+    selectedUI: {r: 0, g: 0, b: 0, a: 0}
+    disabledUI: {r: 0, g: 0, b: 0, a: 0}
+  - thema: 2
+    main1: {r: 0.99607843, g: 0.007843138, b: 1, a: 1}
+    main2: {r: 0.8745098, g: 0.12941177, b: 1, a: 1}
+    main3: {r: 0.5176471, g: 0.02745098, b: 0.80784315, a: 1}
+    main4: {r: 0.37254903, g: 0.011764706, b: 0.7411765, a: 1}
+    main5: {r: 0.18431373, g: 0, b: 0.28627452, a: 1}
+    dark: {r: 0, g: 0, b: 0, a: 0}
+    light: {r: 0, g: 0, b: 0, a: 0}
+    selectedUI: {r: 0, g: 0, b: 0, a: 0}
+    disabledUI: {r: 0, g: 0, b: 0, a: 0}
+  - thema: 3
+    main1: {r: 0, g: 0.972549, b: 0.5686275, a: 1}
+    main2: {r: 0, g: 0.8392157, b: 0.10980392, a: 1}
+    main3: {r: 0.007843138, g: 0.07450981, b: 0.02745098, a: 1}
+    main4: {r: 0.011764706, g: 0.27450982, b: 0.95686275, a: 1}
+    main5: {r: 0.019607844, g: 0.9137255, b: 0.90588236, a: 1}
+    dark: {r: 0, g: 0, b: 0, a: 0}
+    light: {r: 0, g: 0, b: 0, a: 0}
+    selectedUI: {r: 0, g: 0, b: 0, a: 0}
+    disabledUI: {r: 0, g: 0, b: 0, a: 0}
+  - thema: 4
+    main1: {r: 0.7137255, g: 1, b: 0.99607843, a: 1}
+    main2: {r: 0.28235295, g: 0.99215686, b: 0.99607843, a: 1}
+    main3: {r: 0.9490196, g: 0.043137256, b: 0.972549, a: 1}
+    main4: {r: 0.08235294, g: 0.011764706, b: 0.5647059, a: 1}
+    main5: {r: 0.11764706, g: 0.047058824, b: 0.1764706, a: 1}
+    dark: {r: 0, g: 0, b: 0, a: 0}
+    light: {r: 0, g: 0, b: 0, a: 0}
+    selectedUI: {r: 0, g: 0, b: 0, a: 0}
+    disabledUI: {r: 0, g: 0, b: 0, a: 0}
+  - thema: 5
+    main1: {r: 0.98039216, g: 0.2627451, b: 0.9764706, a: 1}
+    main2: {r: 0.8352941, g: 0.1764706, b: 0.8980392, a: 1}
+    main3: {r: 0.7176471, g: 0.30980393, b: 0.9843137, a: 1}
+    main4: {r: 0.5529412, g: 0.2509804, b: 1, a: 1}
+    main5: {r: 0.35686275, g: 0.2, b: 0.99607843, a: 1}
+    dark: {r: 0, g: 0, b: 0, a: 1}
+    light: {r: 0, g: 0, b: 0, a: 1}
+    selectedUI: {r: 0, g: 0, b: 0, a: 1}
+    disabledUI: {r: 0, g: 0, b: 0, a: 1}
+  - thema: 6
+    main1: {r: 0.27450982, g: 0.24705882, b: 0.61960787, a: 1}
+    main2: {r: 0.9529412, g: 0.32941177, b: 0.6627451, a: 1}
+    main3: {r: 0.5176471, g: 0.9607843, b: 0.8352941, a: 1}
+    main4: {r: 0.60784316, g: 0.38431373, b: 0.8980392, a: 1}
+    main5: {r: 0.6156863, g: 0.18039216, b: 0.6901961, a: 1}
+    dark: {r: 0, g: 0, b: 0, a: 1}
+    light: {r: 0, g: 0, b: 0, a: 1}
+    selectedUI: {r: 0, g: 0, b: 0, a: 1}
+    disabledUI: {r: 0, g: 0, b: 0, a: 1}
