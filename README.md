@@ -2,6 +2,8 @@
 이것저것 유틸 모음
 Project : Unity 2021.3.18f1
 
+# [!!! 부분별로 관리하기 위해 Unity Package 로 변경 중!](https://github.com/AlmondStud/.github)
+
 # Attribute
 - [유니티 어트리뷰트 관련 이것저것](https://github.com/Hanjo92/ETC/blob/main/Assets/Scripts/Attributes/Attributes.md)
 
